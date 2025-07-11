@@ -21,7 +21,7 @@ fetch(url)
       card.className = "ninja-card";
       if (videoURL) {
         card.innerHTML = `
-        <img class="ninja-img" src="/img/${name}.png" alt="${name}">
+        <img class="ninja-img" src="img/${name}.png" alt="${name}">
         <div class="ninja-info">
           <h3 class="ninja-name">${name}</h3>
           <p class="ninja-desc">${effect}</p>
