@@ -1,0 +1,135 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fdfdfd;
+  color: #222;
+}
+
+p {
+    margin: 0;
+}
+
+header {
+  background-color: #ff9800;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  padding: 1rem;
+}
+
+.youtube-url {
+  position: relative;
+  padding-left: 24px; /* відступ, щоб не накладалось на текст */
+}
+
+.youtube-url::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;   /* ширина логотипу */
+  height: 14px;  /* висота логотипу */
+  background-image: url('/img/Youtube_logo.png'); /* шлях до твого лого */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Контейнер для всіх карток */
+#ninja-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* відстань між картками */
+  justify-content: center; /* центрування рядків */
+  padding: 1rem;
+}
+
+.ninja-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+  display: flex;
+  flex-direction: column;
+  width: calc(20% - 12.8px); /* 5 карток в рядок мінус gap */
+  min-width: 180px; /* мінімальна ширина картки */
+  max-width: 300px;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.ninja-img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  height: 180px;
+  margin-bottom: 0.8rem;
+}
+
+.ninja-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+/* Ім'я */
+.ninja-name {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #ff9800;
+}
+
+/* Опис */
+.ninja-desc {
+  flex-grow: 1;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* Проміжні показники */
+.ninja-stats {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Посилання на YouTube */
+.ninja-youtube {
+  margin-top: auto;
+  text-decoration: none;
+  color: #c4302b; /* YouTube red */
+  font-weight: bold;
+  align-self: flex-start;
+}
+.ninja-youtube:hover {
+  text-decoration: underline;
+}
+
+/* Адаптивність (приблизно) */
+@media (max-width: 1200px) {
+  .ninja-card {
+    width: calc(25% - 12px); /* 4 в ряд */
+  }
+}
+@media (max-width: 900px) {
+  .ninja-card {
+    width: calc(33% - 10.6px); /* 3 в ряд */
+  }
+}
+@media (max-width: 700px) {
+  .ninja-card {
+    width: calc(45% - 8px); /* 2 в ряд */
+  }
+}
+@media (max-width: 500px) {
+  .ninja-card {
+    width: 100%; /* 1 в ряд */
+  }
+}
