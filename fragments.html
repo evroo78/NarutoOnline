@@ -1,29 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Naruto Online – Guide</title>
-  <link rel="stylesheet" href="style/style.css" />
-  <script src="scripts/script.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-  <header>
-      <div class="header-container">
-        <div class="logo">
-          <a href="index.html"><img src="img/logo.png" alt="Naruto Online Wiki" /></a>
-          <h1>Ninja Assist Table</h1>
-        </div>
-        <nav class="nav" id="main-menu"></nav>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Naruto Online – Guide</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="scripts/script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- datatables -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script> -->
+  </head>
+  <body>
+    <header></header>
+    <div>
+      <input type="text" id="search" placeholder="Search..." />
+      <div class="page-warper">Items on page: 
+        <select id="page-size">
+          <option value="10">10</option>
+          <option value="25" >25</option>
+          <option value="50" selected>50</option>
+          <option value="-1">All</option>
+        </select>
+        Pages:
+        <div id="pagination"></div>
       </div>
-    </header>
-
-  <main>
-    Skill Breakthrough
-  </main>
-
-  <footer>
-    <p>Made with ❤️ by you</p>
-  </footer>
-</body>
+      <table id="myTable">
+        <thead>
+          <tr>
+             <th>№</th>
+            <th data-col="0">Ninja</th>
+            <th data-col="1">Fragment cost</th>
+            <!-- <th data-col="2">URL</th> -->
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <script src="scripts/table-script.js"></script>
+    <footer>
+      <p>Made with ❤️ by you</p>
+    </footer>
+  </body>
 </html>

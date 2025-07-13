@@ -51,7 +51,7 @@ fetch(url)
         card.innerHTML = `
         <div class="ninja-info">
           <div class="ninja-img-wrapper">
-            <img src="img/${name}.png" alt="${name}" class="ninja-img">
+            <img src="img/${name}.png" alt="${name}" class="ninja-img" onerror="this.src='img/${name}.jpg'">
             <a href="${videoURL}" target="_blank" class="youtube-overlay youtube-url"> Watch video</a>
           </div>
           <h3 class="ninja-name">${name}</h3>
@@ -62,7 +62,7 @@ fetch(url)
         card.innerHTML = `
         <div class="ninja-info">
           <div class="ninja-img-wrapper">
-            <img src="img/${name}.png" alt="${name}" class="ninja-img">
+            <img src="img/${name}.png" alt="${name}" class="ninja-img" onerror="this.src='img/${name}.jpg'">
           </div>
           <h3 class="ninja-name">${name}</h3>
           <p class="ninja-desc">${effect}</p>
