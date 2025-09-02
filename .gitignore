@@ -1,0 +1,6 @@
+# Виключити всі Google Sheets ярлики
+*.gsheet
+
+# Виключити тимчасові файли системи
+.DS_Store
+Thumbs.db
