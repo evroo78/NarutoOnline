@@ -6,9 +6,58 @@ body {
   color: #222;
 }
 
-.site-name{
+.img-main-page {
+  max-width: 150px;
+}
+
+.main-page-list {
+  color: #222;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row-reverse;
+  width: 40%;
+  justify-content: flex-end;
+  gap: 5%;
+  min-width: 360px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+  padding: 0.8rem;
+  box-sizing: border-box;
+  flex-grow: 1;
+  margin: 10px 0 10px 0;
+}
+
+.main-page-list div {
+  flex: 1;
+}
+
+h2 a{
+  color: #222;
+  text-decoration: none;
+}
+
+main {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  gap: 5%;
+  
+  flex-wrap: wrap;
+  margin: 0 auto 0 auto;
+}
+
+.site-name {
   font-size: 24px;
   font-weight: 700;
+}
+
+.site-name a {
+  color: white;
+  text-decoration: none;
 }
 
 .logo img {
@@ -189,7 +238,6 @@ main {
 .nav-toggle-label span::after {
   top: 8px;
 }
-
 
 /* Мобільні стилі для меню */
 @media (max-width: 900px) {

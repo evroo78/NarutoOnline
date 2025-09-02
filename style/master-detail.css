@@ -26,10 +26,12 @@
 }
 
 .card-item {
+  flex:1;
   cursor: pointer;
   padding: 0.5rem;
   text-align: center;
   border-bottom: 1px solid #ccc;
+  padding: 10px;
 }
 
 .card-item:hover {
