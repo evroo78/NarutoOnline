@@ -1,7 +1,8 @@
 .main-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   min-height: 80vh;
+  max-height: 90vh;
 }
 
 .detail {
@@ -9,12 +10,9 @@
   padding: 1.5rem;
 }
 
-.main-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .sidebar {
+  display: flex;
+  flex-direction: column;
   width: 200px;
   background: #f0f0f0;
   overflow-y: auto;
@@ -57,12 +55,34 @@
 @media (max-width: 700px) {
   .main-container {
     flex-direction: column;
+    align-items: center;
   }
 
   .sidebar {
-    max-width: 80%;
-    border-right: none;
-    border-bottom: 1px solid #ddd;
+    max-width: 80%; 
+    width: 100%;
+    flex: 1;
+    flex-direction: row;
+    overflow-y:hidden;
+    overflow-x:auto;
+    /* border-right: none; */
+    /* border-bottom: 1px solid #ddd; */
   }
+
+  .Secret-Table{
+    font-size: 0.8em;
+  }
+  .Secret-Table th{
+    height: 80px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  overflow-wrap: break-word;   
+  }
+  .card-item img.thumb {
+  height: 100%;
+  min-width:120px;
+  max-height: 100px;
+  aspect-ratio: 201/112;
+}
 }
 

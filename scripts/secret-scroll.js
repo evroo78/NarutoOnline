@@ -9,6 +9,7 @@ const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?gid=${she
 const cardList = document.getElementById("card-list");
 const detailView = document.getElementById("detail-view");
 let cards = {};
+let lab = {};
 
 let list = document.getElementById("card-list");
 let detail = document.getElementById("detail-view");
@@ -38,31 +39,34 @@ fetch(url)
     try {
     const json = JSON.parse(rep.substring(47).slice(0, -2));
     const rows = json.table.rows;
+
     let last_label = ""; // параметр який змінюється
     let irow = 0;
     let name = "";
     rows.forEach(function (row) {
       const c = row.c;
-
       if (c) {
-        if (isNaN(parseInt(c[14].v))) {
+        if (c[14] && isNaN(parseInt(c[14].v))) {
           last_label = c[14].v;
         }
+
         if (c[0]) {
           if (!cards[c[0].v]) {
             irow = 0;
             name = c[0]?.v || "";
-
+            if (name=="Inner Focus") last_label = json.table.cols.map(col => col.label)[14];
             cards[name] = [];
+            
           } else {
             irow++;
           }
 
           cards[name][irow] = {};
-          labels.forEach(function (leb, i) {
-            cards[name][irow][leb] = c[i + 2]?.v || 0;
+          lab[name] = [...labels, "Aditional " + last_label]
+          lab[name].forEach(function (leb, i) {
+            cards[name][irow][leb] = c[i + 2]?.v || "-";
           });
-          cards[name][irow]["Aditional_" + last_label] = +c[14]?.v || 0;
+          cards[name][irow]["Aditional " + last_label] = +c[14]?.v || 0;
         }
       }
     });
@@ -103,23 +107,33 @@ function showCardDetails(cardName) {
   }
 
   // Приклад: виведемо таблицю з деталями
-  let html = `<h2>${cardName}</h2><table><thead><tr>`;
+              console.log(lab);
+  let html = `<h2>${cardName}</h2><table class="Secret-Table"><thead><tr>`;
   // Заголовки
-  html += "<th>Level</th>";
-  labels.forEach((label) => {
+  html += `<th>Level</th>`;
+  lab[cardName].forEach((label) => {
     html += `<th>${label}</th>`;
   });
   html += "</tr></thead><tbody>";
   
   details.forEach((row, index) => {
-    html += "<tr>";
-    html += `<td>${index + 1}</td>`;
-    labels.forEach((label) => {
+    if (index<18){
+    html += `<tr>`;
+    html += `<td>${index + 1}</ td>`;
+    } else if (index==18) {
+      html += `<tr class="bold-row">`;
+      html += `<td>Total</ td>`;
+    }
+    if (index<19) {
+      lab[cardName].forEach((label) => {
       html += `<td>${row[label] || ""}</td>`;
     });
-    html += "</tr>";
+    html += `</tr>`;
+    } 
+    
   });
-
-  html += "</tbody></table>";
+  html += `</tbody></table>`;
+  if (details.length>19){
+  html += `<p class="bold-row">Predicted Power: ${details[19][labels[0]]}</p>`}
   detailView.innerHTML = html;
 };

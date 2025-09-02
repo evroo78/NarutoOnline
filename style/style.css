@@ -6,6 +6,11 @@ body {
   color: #222;
 }
 
+.site-name{
+  font-size: 24px;
+  font-weight: 700;
+}
+
 .logo img {
   height: 50px; /* або 24px, якщо потрібно ще менше */
   width: auto;
@@ -34,7 +39,7 @@ p {
 header {
   background-color: #ff9800;
   color: white;
-  padding: 1rem;
+  padding: 0.1rem;
   text-align: center;
 }
 
