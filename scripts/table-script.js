@@ -19,9 +19,7 @@ let pageSize = +pageSizeSelect.value;;
 fetch(url)
   .then((res) => res.text())
   .then((rep) => {
-    console.log("Rep", rep); // глянути сирий текст
     const json = JSON.parse(rep.substring(47).slice(0, -2));
-    console.log("json", json);
     if (!json.table.rows || json.table.rows.length === 0) {
       console.warn("Data no found!");
       tableBody.innerHTML = "<tr><td colspan='3'>None</td></tr>";
