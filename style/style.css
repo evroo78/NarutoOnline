@@ -85,6 +85,14 @@ p {
   position: relative;
 }
 
+.footer-container {
+  background-color: #ff9800;
+  align-items: center;
+  text-align: center;
+  padding-top: 10px;
+  margin-top: 5px;
+}
+
 header {
   background-color: #ff9800;
   color: white;
