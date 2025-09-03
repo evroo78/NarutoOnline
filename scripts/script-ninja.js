@@ -51,7 +51,7 @@ fetch(url)
         card.innerHTML = `
         <div class="ninja-info">
           <div class="ninja-img-wrapper">
-            <img src="img/${name}.png" alt="${name}" class="ninja-img" onerror="this.src='img/${name}.jpg'">
+            <img src="img/Ninja Assist/${name}.jpg" alt="${name}" class="ninja-img" onerror="this.src='img/${name}.jpg'">
             <a href="${videoURL}" target="_blank" class="youtube-overlay youtube-url"> Watch video</a>
           </div>
           <h3 class="ninja-name">${name}</h3>
@@ -62,7 +62,7 @@ fetch(url)
         card.innerHTML = `
         <div class="ninja-info">
           <div class="ninja-img-wrapper">
-            <img src="img/${name}.png" alt="${name}" class="ninja-img" onerror="this.src='img/${name}.jpg'">
+            <img src="img/Ninja Assist/${name}.jpg" alt="${name}" class="ninja-img" onerror="this.src='img/${name}.jpg'">
           </div>
           <h3 class="ninja-name">${name}</h3>
           <p class="ninja-desc">${effect}</p>
@@ -71,7 +71,7 @@ fetch(url)
       }
       // if (isImg) {
       //   const img = new Image();
-      //   img.src = `img/${name}.png`;
+      //   img.src = `img/Ninja Assist/${name}.jpg`;
       //   img.alt = name;
       //   img.className = "ninja-img";
       //   card.insertBefore(img, card.firstChild);
